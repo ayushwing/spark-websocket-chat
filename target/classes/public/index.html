@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ayush-Group-Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!--   -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="chatControls">
+        <input id="message"  type="text" placeholder="Type Here">
+		<button id="send">Send</button>
+        
+    </div>
+    <ul id="userlist"> <!-- Built by JS --> </ul>
+    <div id="chat">    <!-- Built by JS --> 
+    </div>
+        <script src="websocketDemo.js"></script>
+</body>
+
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="submitName()" >&times;</button>
+         <font face="verdana">  <h3 class="modal-title">Welcome to Chat World !</h3>
+        </div>
+       
+        <div class="modal-body">
+         <h4>Enter you name  &darr;&darr;</h4>
+        <input type="text" class="form-control" id="user-id-name">
+        </div>
+        <div class="modal-footer">
+         <button type="button" class="btn btn-success" onclick="submitName()">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submitName()">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </font>
+      </html>
+  
+    
+
