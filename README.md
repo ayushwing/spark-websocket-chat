@@ -1,2 +1,2 @@
-# spark-websocket-chat
+# Spark-websocket-chat
 Chat application using light-weight microservice framework spark

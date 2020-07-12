@@ -1,51 +1,64 @@
 package com.build.websocketchat.handler;
 
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
+import static spark.utils.StringUtils.isEmpty;
+import static spark.utils.StringUtils.isNotEmpty;
 
-import org.eclipse.jetty.util.StringUtil;
+import org.eclipse.jetty.io.EofException;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketError;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
-
-import com.build.websocketchat.Main;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @WebSocket
 public class WebSocketHandler {
 
-	private String sender;
-	private String msg;
-	
-	
-	@OnWebSocketConnect
-	public void onConnect(Session session) throws IOException, InterruptedException, ExecutionException, TimeoutException {
-		/*String username = "User-" + Main.nextUserNumber++;
-		Main.userNameMap.put(session,username);
-		Main.broadcastMessage(sender = "Server", msg = (username + " joined the chat"));*/
+	private static final Logger logger = LoggerFactory.getLogger(WebSocketHandler.class);
+
+	private final BroadcastHandler broadcastHandler;
+	private final WebSocketSession webSocketSession;
+
+	public WebSocketHandler() {
+		broadcastHandler = new BroadcastHandler();
+		webSocketSession = WebSocketSession.initWebsocketSession();
 	}
-	
+
+	@OnWebSocketConnect
+	public void onConnect(Session session) {
+		webSocketSession.addUser(session, null);
+	}
+
 	@OnWebSocketClose
 	public void onClose(Session session, int statusCode, String reason) {
-		String userName = Main.userNameMap.get(session);
-		Main.userNameMap.remove(session);
-		Main.broadcastMessage(sender = "SocketServer ", msg = (userName + " left the chat"));
+		broadcastHandler.broadcastAll(session, "left the chat..");
+		webSocketSession.purgeSession(session);
 	}
+
 	@OnWebSocketMessage
 	public void onMessage(Session session, String message) {
-		if(StringUtil.isNotBlank(message)){
-			if(message.contains("webSocketAyushUserName###")){
-				String[] userName = message.split("###");
-				Main.userNameMap.put(session, userName[1]);
-				Main.broadcastMessage(sender = "SocketServer ", msg = (userName[1] + " joined the chat"));
-			}else if(message.equals("###webSocketAnonymousUserName###")){
-				Main.userNameMap.put(session, "Anonymous-"+Main.anonymousUserNumber++);
-				Main.broadcastMessage(sender = "SocketServer ", msg = (Main.userNameMap.get(session)+ " joined the chat. He might be too shy to say his name"));
-			}else
-				Main.broadcastMessage(sender = Main.userNameMap.get(session), msg = message);
-			}
+		if (isEmpty(message)) {
+			return;
 		}
-	
+
+		if (message.contains("@#@joined the chat..")) {
+			String[] username = message.split("@#@");
+			if(isNotEmpty(username[0])) {
+				webSocketSession.addUser(session, username[0]);
+			}
+			broadcastHandler.broadcastAll(session, username[1]);
+		} else {
+			broadcastHandler.broadcastAll(session, message);
+		}
+	}
+
+	@OnWebSocketError
+	public void onError(Throwable t) {
+		if (!(t instanceof EofException)) {
+			logger.error("error", t);
+		}
+	}
+
 }

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-    font-family: monospace;
+    font-family: Georgia, serif;
     font-size: 14px;
     max-width: 680px;
     margin: 0 auto;
@@ -21,7 +21,7 @@ body {
 }
 
 #send {
-    float: right;
+    float: left;
     background-color: #4CAF50;
     border: none;
     color: white;
