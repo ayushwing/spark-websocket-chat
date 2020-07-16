@@ -8,26 +8,25 @@ html {
 
 body {
     font-family: Georgia, serif;
-    font-size: 14px;
-    max-width: 680px;
-    margin: 0 auto;
+    font-size: 15px;
+    max-width: 90%;
+    margin: 8px auto;
     padding: 20px
 }
 
-#message {
-    width: 100%;
+/*#message {
+    width: 90%;
     padding: 5px;
     margin: 5px 0;
 }
-
+*/
 #send {
-    float: left;
-    background-color: #4CAF50;
+    background-color: #3498DB;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 14px 30px;
     text-decoration: none;
-    margin: 4px 2px;
+    margin: 8px 2px;
     cursor: pointer;
 }
 
@@ -40,18 +39,21 @@ li {
     margin: 0 0 5px 0
 }
 
-#userlist {
-    position: fixed;
-    left: 60%;
-    list-style: none;
-    margin-left: 250px;
-    background: #f0f0f9;
-    padding: 5px 10px;
-    width: 160px;
-    top: 11px;
+#connectedUser{
+    padding: 20px 100px;
+    width: 20%;
+    float: left;
+    top: 50px;
 }
 
-#chat p {
+#userlist {
+    list-style: devanagari;
+    padding-top:10px;
+    padding-left:15px;
+}
+
+
+#chat b {
     margin: 5px 0;
     font-weight: 300
 }
@@ -64,18 +66,22 @@ li {
 }
 
 #chat article {
-    background: #f1f1f1;
+    background: #AED6F1;
     padding: 10px;
     margin: 10px 0;
-    border-left: 5px solid #aaa;
+    border-left: 5px solid #85C1E9;
     position: relative;
     word-wrap: break-word;
+    width: 80%;
+    float: right;
 }
 
 #chat article:first-of-type {
-    background: #c9edc3;
-    border-left-color: #74a377;
+    background: #D6EAF8;
+    border-left-color: #AED6F1;
     animation: enter .2s 1;
+    width: 80%;
+    float: right;
 }
 
 #message {
@@ -87,6 +93,7 @@ li {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     outline: none;
+    float: right;
 }
 
 #message:focus {
@@ -98,4 +105,12 @@ li {
     from { transform: none;        }
     50%  { transform: scale(1.05); }
     to   { transform: none;        }
+}
+
+body.modal-open .display-content{
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
 }

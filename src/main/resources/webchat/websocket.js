@@ -11,7 +11,6 @@ webSocket.onmessage = function (msg) {
     data.activeUsers.forEach(function (user) {
         insert("userlist", "<li>" + user + "</li>");
     });
-    insert("userlist", "<li><B>Connected:</B></li>");
 };
 
 webSocket.onclose = function () {  
@@ -22,7 +21,6 @@ id("send").addEventListener("click", function () {
     sendMessage(id("message").value);
 });
 
-//Send message if enter is pressed in the input field
 id("message").addEventListener("keypress", function (e) {
     if (e.keyCode === 13) { sendMessage(e.target.value); }
 });
@@ -43,7 +41,6 @@ function sendMessage(message) {
     }
 }
 
-//Helper function for inserting HTML as the first child of an element
 function insert(targetId, message) {
     id(targetId).insertAdjacentHTML("afterbegin", message);
 }
@@ -54,4 +51,7 @@ function id(id) {
 
 webSocket.onopen = function() {
         $('#nameModal').modal('show');
+        $('#nameModal').on('shown.bs.modal', function() {
+  $('#username').focus();
+});
 };
