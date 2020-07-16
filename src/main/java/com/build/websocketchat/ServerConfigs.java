@@ -23,7 +23,7 @@ public class ServerConfigs {
 
 	public static void websocketInitializer() {
 		webSocket("/chat", WebSocketHandler.class);
-		webSocketIdleTimeoutMillis(3600000);  // 60 minutes
+		webSocketIdleTimeoutMillis(10 * 60 * 1000);  // 10 minutes
 	}
 
 }
