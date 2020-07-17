@@ -33,6 +33,14 @@ function openConnection(){
     }
 }
 
+function keepAlive() { 
+    var timeout = 40000;  
+    if (webSocket.readyState == webSocket.OPEN) {  
+        webSocket.send('');  
+    }  
+    setTimeout(keepAlive, timeout);  
+}
+
 function sendMessage(message) {
     if (message !== "") {
         webSocket.send(message);
@@ -53,4 +61,5 @@ webSocket.onopen = function() {
         $('#nameModal').on('shown.bs.modal', function() {
   $('#username').focus();
 });
+        keepAlive();
 };
