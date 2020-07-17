@@ -5,9 +5,6 @@ import static spark.Spark.port;
 
 public class Main {
 
-	static int nextUserNumber = 1;
-	public static int anonymousUserNumber = 1;
-
 	public static void main(String[] args) {
 		port(ServerConfigs.getHerokuAssignedPort());
 		ServerConfigs.initStatic();
