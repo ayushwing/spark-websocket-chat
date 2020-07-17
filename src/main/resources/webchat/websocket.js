@@ -1,6 +1,5 @@
 var webSocket = new WebSocket("wss://" + location.hostname + ":" + location.port + "/chat");
-
-/*TODO try deploying with wss it should work on both https and http*/
+/*To run locally just change wss to ws to avoid https issue*/
 
 webSocket.onmessage = function (msg) { 
     var data = JSON.parse(msg.data);
