@@ -25,5 +25,5 @@ _Prerequisite_ : Make sure you have Java 8+ and Maven installed.
 Typically strong in backend code, but could build decent responsive UI (with the help of a tremendous strategic partnership with google:D)  
 
 <div align="center">
-    <img src="/doc/screenshot/welcome-screen.png" width="50%"</img> 
+    <img src="/doc/screenshot/welcome-screen.png" width="100%"</img> 
 </div>
