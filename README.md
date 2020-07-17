@@ -2,7 +2,7 @@
 
 ## About
 
-Chat app created using the light-weight microservice framework "Spark Java". It internally uses Jetty server and it's WebSocket capability
+Chat app created using the light-weight microservice framework "Spark Java". It internally uses Jetty and it's WebSocket capabilities.
 
 This application can support more than concurrent 500 users, with full privacy chatting experience (as we don't log or store any message :D)
 
