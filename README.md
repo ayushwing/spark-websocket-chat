@@ -1,6 +1,6 @@
 # Spark-websocket-chat
 
-## What is this? 
+## About
 
 Chat app created using the light-weight microservice framework "Spark Java". It internally uses Jetty server and it's WebSocket capability
 
@@ -20,3 +20,6 @@ _Prerequisite_ : Make sure you have Java 8+ and Maven installed.
 4. After the build, you should have a target folder with a file as `websocketchat...-jar-with-dependencies.jar`
 5. Navigate to this path and run `java -jar websocketchat-1.0.0-SNAPSHOT-jar-with-dependencies.jar`
 6. The server will start default on `localhost:4567`. Open it in browser and Enjoy! :)  
+
+## Screenshots of deployed app
+# Typically strong in backend code, but could build decent responsive UI (with the help of a tremendous strategic partnership with google:D)  
