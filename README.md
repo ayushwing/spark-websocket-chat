@@ -26,6 +26,9 @@ Typically strong in backend code, but could build decent responsive UI (with the
 
 <div align="center">
     <img src="/doc/screenshot/welcome-screen.png" width="100%"</img> 
+    <img src="/doc/screenshot/display-1.png" width="100%"</img> 
+    <img src="/doc/screenshot/display-2.png" width="100%"</img> 
+    <img src="/doc/screenshot/display-3.png" width="100%"</img> 
 </div>
 
 ![Alt text](/doc/screenshot/welcome-screen.png?raw=true "Welcome screen")
