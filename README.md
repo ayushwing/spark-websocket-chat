@@ -8,7 +8,7 @@ This application can support more than concurrent 500 users, with full privacy c
 
 I have also set up a complete pipeline setup to deploy code to Heroku free tier VM's.
 
-**Give a try with working demo of chat group** : https://websocket-spark-chat.herokuapp.com/
+**Give a try with working demo of chat group** : https://websocket-spark-chat.herokuapp.com
 
 ## Want to run your own instance ?
 
