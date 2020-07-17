@@ -24,8 +24,8 @@ _Prerequisite_ : Make sure you have Java 8+ and Maven installed.
 ## Screenshots of deployed app
 Typically strong in backend code, but could build decent responsive UI (with the help of a tremendous strategic partnership with google:D)  
 
-<div id="myImageId" align="center">
-    <img src="/doc/screenshot/welcome-screen.png" width="50%" border="5px solid #555"</img> 
+<div id="myImageId" align="left">
+    <img src="/doc/screenshot/welcome-screen.png" width="75%" border="5px solid #555"</img> 
     <img src="/doc/screenshot/display-1.png" width="50%" border="5px solid #555"</img> 
     <img src="/doc/screenshot/display-2.png" width="50%" border="5px solid #555"</img> 
     <img src="/doc/screenshot/display-3.png" width="50%" border="5px solid #555"</img> 
