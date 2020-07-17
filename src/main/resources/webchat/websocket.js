@@ -1,4 +1,4 @@
-var webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/chat");
+var webSocket = new WebSocket("wss://" + location.hostname + ":" + location.port + "/chat");
 
 /*TODO try deploying with wss it should work on both https and http*/
 
