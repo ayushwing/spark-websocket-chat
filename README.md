@@ -22,4 +22,4 @@ _Prerequisite_ : Make sure you have Java 8+ and Maven installed.
 6. The server will start default on `localhost:4567`. Open it in browser and Enjoy! :)  
 
 ## Screenshots of deployed app
-# Typically strong in backend code, but could build decent responsive UI (with the help of a tremendous strategic partnership with google:D)  
+### Typically strong in backend code, but could build decent responsive UI (with the help of a tremendous strategic partnership with google:D)  
