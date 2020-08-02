@@ -14,7 +14,7 @@ I have also set up a complete pipeline setup to deploy code to Heroku free tier 
 
 _Prerequisite_ : Make sure you have Java 8+ and Maven installed. 
 
-1. Clone this repo https://github.com/ayushsoni1/spark-websocket-chat.git
+1. Clone this repo https://github.com/ayushwing/spark-websocket-chat.git
 2. Open file websocket.js and change Websocket connection from wss to ws in Line 1 (If you do not have localhost https cert configured)
 3. Open Terminal and build using Maven (mvn clean install Or mvn clean package)
 4. After the build, you should have a target folder with a file as `websocketchat...-jar-with-dependencies.jar`
