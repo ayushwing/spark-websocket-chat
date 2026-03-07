@@ -10,6 +10,8 @@ Set up a complete pipeline to deploy code to Heroku free tier VM's.
 
 **Give a try with working demo of chat group** : https://websocket-spark-chat.herokuapp.com
 
+(**Update: Heroku discontinued its free tier, including free dynos and data services, on November 28, 2022.**)
+
 ## Want to run your own instance ?
 
 _Prerequisite_ : Make sure you have Java 8+ and Maven installed. 
